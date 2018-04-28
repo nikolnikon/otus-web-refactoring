@@ -126,7 +126,7 @@ def _get_words_from_function_name(function_name):
     return [word for word in function_name.split('_')]
 
 
-if __name__ == '__main__':
+if __name__ == '__main__':  # Ппример использования
     projects = [('jobReqSync', '/home/nikonov/dev/jobReqSync'), ('jobLauncher', '/home/nikonov/dev/jobLauncher')]
     for project in projects:
         stats = get_top_verbs_in_path(project[1], 5)
