@@ -41,8 +41,8 @@ $ pip install -r requirements.txt
 ## Участие в проекте
 
 
-### Тестирование
+## Тестирование
 
 
-### Версионирование
+## Версионирование
 Используется подход [semantic versioning](https://github.com/dbrock/semver-howto/blob/master/README.md).
