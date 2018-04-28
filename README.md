@@ -28,6 +28,11 @@ Project "jobLauncher" top verbs
 
 ## Установка
 
+С использованием pip:
+```bash
+$ pip install dclnt
+```
+
 С использованием git и установкой зависимостей из requirements.txt:
 ```bash
 $ git clone https://github.com/nikolnikon/otus-web-refactoring.git ./dclnt
