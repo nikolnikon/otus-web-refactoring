@@ -47,7 +47,7 @@ def get_top_functions_names_in_path(path, top_size=10):
 
 def _flat(_list):
     """ [(1,2), (3,4)] -> [1, 2, 3, 4]"""
-    return [itertools.chain.from_iterable(_list)]
+    return [i for i in itertools.chain.from_iterable(_list)]
     # return sum([list(item) for item in _list], [])
 
 
@@ -108,15 +108,6 @@ def _get_all_functions_names(tree):
     return [f for f in all_funcs if not (f.startswith('__') and f.endswith('__'))]
 
 
-# def _get_all_names(tree):
-#     """
-#     Возвращает список всех имен из дерева (файла)
-#     :param tree:    Дерево, построенное по файлу .py
-#     :return:        Список всех имен в дереве
-#     """
-#     return [node.id for node in ast.walk(tree) if isinstance(node, ast.Name)]
-
-
 def _get_verbs_from_function_name(function_name):
     """
     Возвращает список глаголов, входящих в название функции
@@ -135,9 +126,10 @@ def _get_words_from_function_name(function_name):
     return [word for word in function_name.split('_')]
 
 
-if __name__ == 'main':
-    projects = [('jobReqSync', '/home/nikonov/dev/jobReqSync'), ]
+if __name__ == '__main__':
+    projects = [('jobReqSync', '/home/nikonov/dev/jobReqSync'), ('jobLauncher', '/home/nikonov/dev/jobLauncher')]
     for project in projects:
         stats = get_top_verbs_in_path(project[1], 5)
-        print('Project {} top verbs\n'.format(project[0]))
-        print(stats)
+        print('Project "{}" top verbs'.format(project[0]))
+        for verb in stats:
+            print('\t{verb}: {occurence}'.format(verb=verb[0], occurence=verb[1]))
