@@ -33,6 +33,13 @@ Project "jobLauncher" top verbs
 $ git clone https://github.com/nikolnikon/otus-web-refactoring.git ./dclnt
 $ cd dclnt
 $ pip install -r requirements.txt
+$ python
+>>> import nltk
+>>> nltk.download('averaged_perceptron_tagger')
+[nltk_data] Downloading package averaged_perceptron_tagger to
+[nltk_data]     /home/nikonov/nltk_data...
+[nltk_data]   Unzipping taggers/averaged_perceptron_tagger.zip.
+True
 ```
 
 ## Документация
@@ -46,3 +53,7 @@ $ pip install -r requirements.txt
 
 ## Версионирование
 Используется подход [semantic versioning](https://github.com/dbrock/semver-howto/blob/master/README.md).
+
+## Лицензия
+Проект распространяентся под лицензией MIT. Подробная информация в файле
+[LICENSE](https://github.com/nikolnikon/otus-web-refactoring/blob/master/LICENSE)
