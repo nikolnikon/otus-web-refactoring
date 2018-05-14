@@ -60,7 +60,7 @@ def _is_verb(word):
     if not word:
         return False
     pos_info = pos_tag([word])
-    return pos_info[0][1] == 'VB'
+    return 'VB' in pos_info[0][1]
 
 
 def _get_trees(path):
@@ -74,7 +74,7 @@ def _get_trees(path):
     py_filenames = []
     trees = []
     for dirname, dirs, files in os.walk(path, topdown=True):
-        _get_py_files_names(py_filenames, dirname, files)
+        py_filenames += _get_py_files_names(dirname, files)
 
     for filename in py_filenames:
         with open(filename, 'r', encoding='utf-8') as attempt_handler:
@@ -89,12 +89,11 @@ def _get_trees(path):
     return trees
 
 
-def _get_py_files_names(py_filenames, dirname, files, limit=100):
+def _get_py_files_names(dirname, files):
+    py_filenames = []
     for file in files:
         if file.endswith('.py'):
             py_filenames.append(os.path.join(dirname, file))
-            if len(py_filenames) == limit:
-                break
 
 
 def _get_all_functions_names(tree):
@@ -129,7 +128,7 @@ def _get_words_from_function_name(function_name):
 if __name__ == '__main__':  # Ппример использования
     projects = [('jobReqSync', '/home/nikonov/dev/jobReqSync'), ('jobLauncher', '/home/nikonov/dev/jobLauncher')]
     for project in projects:
-        stats = get_top_verbs_in_path(project[1], 5)
+        stats = get_top_verbs_in_path(project[1], top_size=5)
         print('Project "{}" top verbs'.format(project[0]))
         for verb in stats:
             print('\t{verb}: {occurence}'.format(verb=verb[0], occurence=verb[1]))
