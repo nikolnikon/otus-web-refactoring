@@ -5,7 +5,7 @@ with open(join(dirname(__file__), 'README.md')) as readme:
     README = readme.read()
 
 setup(
-    name='dclnt',
+    name='code_stat',
     version='0.0.1',
     description='Библиотека для сбора статистики по использованию слов в названиях функций',
     long_description=README,
