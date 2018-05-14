@@ -1,6 +1,6 @@
-# dclnt lib
+# code_stat lib
 
-dclnt это библиотека, которая позволяет собирать статистику по использованию слов в названиях функций, содержащихся в
+code_stat это библиотека, которая позволяет собирать статистику по использованию слов в названиях функций, содержащихся в
 модулях того или иного проекта. С ее помощью можно определить самые встречающиеся слова и глаголы в названиях функций,
 а также самые встречающиеся имена функций.
 
@@ -30,13 +30,13 @@ Project "jobLauncher" top verbs
 
 С использованием pip:
 ```bash
-$ pip install dclnt
+$ pip install code_stat
 ```
 
 С использованием git и установкой зависимостей из requirements.txt:
 ```bash
-$ git clone https://github.com/nikolnikon/otus-web-refactoring.git ./dclnt
-$ cd dclnt
+$ git clone https://github.com/nikolnikon/otus-web-refactoring.git ./code_stat
+$ cd code_stat
 $ pip install -r requirements.txt
 $ python
 >>> import nltk
