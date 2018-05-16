@@ -93,6 +93,8 @@ def _get_py_files_names(dirname, files):
         if file.endswith('.py'):
             py_filenames.append(os.path.join(dirname, file))
 
+    return py_filenames
+
 
 def _get_all_functions_names(tree):
     """
